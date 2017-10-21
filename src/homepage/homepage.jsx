@@ -1,66 +1,58 @@
 import React from "react";
-import { Menu, Input } from "semantic-ui-react";
 import CardList from "./homepage_cards.jsx";
 import Carousel from "./carousel.jsx";
 
 class Homepage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   render() {
-    const { activeItem } = this.state;
     const items = [
       {
+        name: "Miso Salmon",
         image:
-          "https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg?w=1260&h=750&auto=compress&cs=tinysrgb",
-        name: "Pizza"
+          "https://www.tokyotimes.com/wp-content/uploads/2013/03/japanese-food.jpg",
+        rating: 4.41,
+        description:
+          "Japanese style-broiled salmon just like the restaurants.  Easy recipe I came up with at the request of my family. Serve with sticky white rice and a light salad."
       },
       {
+        name: "Miso Salmon (Sake Misozuke) with Spinach Sauce",
+        image: "http://cdn.skim.gs/images/v1/msi/fvc7d7csgmaak7703rfn/things-only-people-who-love-japanese-food-will-understand",
+        rating: 3.5,
+        description:
+          "Salmon fillets are marinated in white miso, then broiled with a vibrant spinach sauce."
+      },
+      {
+        name: "Poached Salmon Tobiko Bowls",
+        image: "https://migrationology.smugmug.com/Japan-2015/i-LvtBZKX/0/X3/japanese-comfort-food-2-X3.jpg",
+        rating: 0.0,
+        description:
+          "Sticky rice is topped with salmon and tobiko (fish eggs) in this quick and easy Japanese-inspired bowl that is ready in less than 1 hour."
+      },
+      {
+        name: "Nona's Tableside Homemade Soft Tofu",
         image:
-          "http://intimesoft.com/wp-content/uploads/2017/01/421x263xfast-food.jpg.pagespeed.ic.8dPWTXz9ce.jpg",
-        name: "Burger"
+          "https://gaijinpot.scdn3.secure.raxcdn.com/wp-content/uploads/sites/4/2016/11/oyakodon.jpg",
+        rating: 5.0,
+        description:
+          "Although somewhat similar to silken (soft) tofu since no weight is placed on tofu to extract liquid, this type of tofu is not quite silken in texture. If is much softer and fluffier than silken and does not have the crisp form cutting quality of silken tofu. Simmering cut tofu for 5 minutes firms up tofu for later cooking."
+      },
+      {
+        name: "Okura and Sakura Shrimp Japanese-Style Spaghetti",
+        image: "http://harusushi.com/wp-content/uploads/2016/05/boston_uncommon_roll.jpg",
+        rating: 0.0,
+        description:
+          "Spaghetti is tossed with tiny sakura shrimp and fresh okra in this Japanese-style pasta dish seasoned with soy sauce, mirin, and sake."
       }
     ];
     return (
       <div>
-        Homepage
         <div>
           <div className="header-section" />
-          <Menu borderless>
-            <Menu.Item>
-              <Input action="search" placeholder="Search..." />
-            </Menu.Item>
-            <Menu.Menu position="right">
-              <Menu.Item
-                name="editorials"
-                active={activeItem === "editorials"}
-                onClick={this.handleItemClick}
-                position={"right"}
-              >
-                Discover Hosting
-              </Menu.Item>
-              <Menu.Item
-                name="reviews"
-                active={activeItem === "reviews"}
-                onClick={this.handleItemClick}
-                position={"right"}
-              >
-                Sign Up
-              </Menu.Item>
-              <Menu.Item
-                name="upcomingEvents"
-                active={activeItem === "upcomingEvents"}
-                onClick={this.handleItemClick}
-                position={"right"}
-              >
-                Log In
-              </Menu.Item>
-            </Menu.Menu>
-          </Menu>
+
         </div>
         <div className="carousel">
           <Carousel items={items} />
